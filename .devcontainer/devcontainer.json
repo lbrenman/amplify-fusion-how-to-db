@@ -1,0 +1,54 @@
+{
+  "name": "Resource Manager",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "forwardPorts": [3000, 5000, 8080, 5432],
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend (React)",
+      "onAutoForward": "openBrowser"
+    },
+    "5000": {
+      "label": "Backend API (Node.js)"
+    },
+    "8080": {
+      "label": "PgAdmin"
+    },
+    "5432": {
+      "label": "PostgreSQL Database"
+    }
+  },
+  "postCreateCommand": "npm run install-all && cp .env.example .env",
+  "postStartCommand": "docker-compose up -d",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-npm-script",
+        "ckolkman.vscode-postgres"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true
+        },
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "emmet.includeLanguages": {
+          "javascript": "javascriptreact"
+        }
+      }
+    }
+  },
+  "remoteUser": "node"
+}
