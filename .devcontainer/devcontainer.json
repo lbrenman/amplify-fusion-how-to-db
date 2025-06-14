@@ -17,7 +17,7 @@
       "label": "Backend API (Node.js)"
     },
     "8080": {
-      "label": "PgAdmin"
+      "label": "Database Admin (Adminer)"
     },
     "5432": {
       "label": "PostgreSQL Database"
