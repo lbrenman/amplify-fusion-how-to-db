@@ -4,12 +4,11 @@ import { format } from 'date-fns';
 import {
   PencilIcon,
   TrashIcon,
-  ExternalLinkIcon,
+  ArrowTopRightOnSquareIcon,
   MagnifyingGlassIcon,
   FunnelIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline';
-import toast from 'react-hot-toast';
 
 const ResourceList = ({ onEdit }) => {
   const {
@@ -238,7 +237,7 @@ const ResourceList = ({ onEdit }) => {
                             className="text-primary-500 hover:text-primary-600"
                             title="Open URL"
                           >
-                            <ExternalLinkIcon className="w-4 h-4" />
+                            <ArrowTopRightOnSquareIcon className="w-4 h-4" />
                           </a>
                         )}
                       </div>

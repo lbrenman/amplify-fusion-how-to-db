@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 const Header = ({ onCreateNew, currentView }) => {
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
   const { exportToCSV, importFromCSV } = useResources();
 
   const handleImport = (event) => {

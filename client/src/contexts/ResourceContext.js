@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { resourceAPI } from '../services/api';
 import toast from 'react-hot-toast';
 
@@ -27,7 +27,7 @@ export const ResourceProvider = ({ children }) => {
   });
 
   // Fetch resources with current filters
-  const fetchResources = async () => {
+  const fetchResources = useCallback(async () => {
     try {
       setLoading(true);
       const data = await resourceAPI.getAll(filters);
@@ -38,7 +38,7 @@ export const ResourceProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
   // Fetch types
   const fetchTypes = async () => {
@@ -188,7 +188,7 @@ export const ResourceProvider = ({ children }) => {
   // Fetch resources when filters change
   useEffect(() => {
     fetchResources();
-  }, [filters]);
+  }, [fetchResources]);
 
   const value = {
     resources,

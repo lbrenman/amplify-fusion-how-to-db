@@ -11,6 +11,9 @@ const resourceRoutes = require('./routes/resources');
 const app = express();
 const PORT = process.env.SERVER_PORT || 5000;
 
+// Trust proxy for GitHub Codespaces and other reverse proxies
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 

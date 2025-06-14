@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import ResourceList from './components/ResourceList';
 import ResourceForm from './components/ResourceForm';
