@@ -88,7 +88,7 @@ app.use('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`🗄️  PgAdmin: http://localhost:${process.env.PGADMIN_PORT || 8080}`);
+  console.log(`🗄️  Database Admin (Adminer): http://localhost:${process.env.ADMINER_PORT || 8080}`);
 });
 
 // Graceful shutdown

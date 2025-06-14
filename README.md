@@ -11,7 +11,7 @@ A modern, full-stack resource management application built with React, Node.js, 
 - **Dynamic Types**: Customizable resource types (video, blog, article, etc.)
 - **Tag System**: Organize resources with comma-separated tags
 - **Status Tracking**: Mark resources as internal/public and active/obsolete
-- **Database Admin**: Built-in PgAdmin for direct database access
+- **Database Admin**: Built-in Adminer for direct database access
 
 ## 🚀 Quick Start (GitHub Codespaces)
 
@@ -44,20 +44,17 @@ npm run dev
 This will start:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:5000
-- PgAdmin: http://localhost:8080
+- Adminer (Database Admin): http://localhost:8080
 
-### 5. Access PgAdmin (Optional)
+### 5. Access Adminer (Database Administration)
 
 1. Go to http://localhost:8080
 2. Login with:
-   - Email: `admin@admin.com`
-   - Password: `admin`
-3. Add server:
-   - Host: `postgres`
-   - Port: `5432`
-   - Database: `resource_manager`
-   - Username: `admin`
-   - Password: `password123`
+   - **System**: PostgreSQL
+   - **Server**: postgres
+   - **Username**: admin
+   - **Password**: password123
+   - **Database**: resource_manager (optional)
 
 ## 📁 Project Structure
 
@@ -94,8 +91,7 @@ resource-manager/
 | `DB_USER` | Database user | `admin` |
 | `DB_PASSWORD` | Database password | `password123` |
 | `SERVER_PORT` | Backend port | `5000` |
-| `PGADMIN_EMAIL` | PgAdmin email | `admin@admin.com` |
-| `PGADMIN_PASSWORD` | PgAdmin password | `admin` |
+| `ADMINER_PORT` | Adminer port | `8080` |
 | `REACT_APP_API_URL` | Frontend API URL | `http://localhost:5000/api` |
 
 ## 📊 Database Schema
@@ -236,7 +232,7 @@ docker-compose down
 
 # View logs
 docker-compose logs postgres
-docker-compose logs pgadmin
+docker-compose logs adminer
 
 # Reset database (removes all data)
 docker-compose down -v
@@ -294,7 +290,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Ensure file size is under 10MB
 - Verify type names exist in database
 
-**PgAdmin Access Issues**
+**Adminer Access Issues**
 - Wait for containers to fully start
 - Check credentials in `.env` file
 - Try refreshing browser cache
